@@ -4,7 +4,7 @@ title: Home
 colors: colors-a
 backgroundImage:
   type: BackgroundImage
-  url: /images/xray-pcb.jpg
+  url: /images/blog3.jpg
   backgroundSize: cover
   backgroundPosition: center
   backgroundRepeat: no-repeat
