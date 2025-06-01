@@ -10,7 +10,7 @@ description: >-
 featuredImage:
   type: ImageBlock
   url: /images/IMG_5278.jpg
-  altText: Project thumbnail image
+  altText: Black-and-green radar
 media:
   type: ImageBlock
   url: /images/bg2.jpg
