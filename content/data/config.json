@@ -67,16 +67,6 @@
                 "elementId": ""
             }
         ],
-        "contacts": {
-            "type": "ContactBlock",
-            "title": "Contact details",
-            "phoneNumber": "",
-            "phoneAltText": "My phone number",
-            "email": "siddh.shah90@gmail.com",
-            "emailAltText": "My email",
-            "address": "Monmouth Junction, NJ",
-            "addressAltText": "My address"
-        },
         "copyrightText": "",
         "styles": {
             "self": {
