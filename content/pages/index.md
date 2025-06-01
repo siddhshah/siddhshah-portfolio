@@ -16,7 +16,7 @@ sections:
     title: Siddh Shah
     subtitle: >-
       Computer Engineering student at the University of Illinois with a passion
-      for autonomous robotics, computer vision, and FPGA-based hardware
+      for autonomous robots, computer vision, and FPGA-based hardware
       acceleration.
     styles:
       self:
