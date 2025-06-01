@@ -5,9 +5,8 @@ colors: colors-a
 date: '2025-05-08'
 client: ''
 description: >-
-  It’s hard to imagine that I’ve that I wrote all this code by myself, probably
-  because I worked with an entire team :) but they definitely followed my lead
-  most of the time.
+  A real-time object mapping system using an ultrasonic sensor and a Xilinx
+  Spartan-7 FPGA for better object navigation in autonomous robots.
 featuredImage:
   type: ImageBlock
   url: /images/bg2.jpg
