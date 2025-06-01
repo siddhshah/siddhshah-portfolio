@@ -61,6 +61,16 @@
                 "label": "GitHub",
                 "url": "https://github.com/netlify-templates",
                 "altText": "Netlify templates"
+            },
+            {
+                "type": "Link",
+                "label": "Learn more",
+                "altText": "",
+                "url": "https://www.linkedin.com/in/siddhshah05",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "elementId": ""
             }
         ],
         "contacts": {
