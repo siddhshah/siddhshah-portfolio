@@ -67,7 +67,7 @@
                 "elementId": ""
             }
         ],
-        "copyrightText": "",
+        "copyrightText": "Powered by [Netlify](https://www.netlify.com)\n",
         "styles": {
             "self": {
                 "width": "narrow",
