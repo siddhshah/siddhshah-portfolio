@@ -14,7 +14,10 @@ sections:
     colors: colors-f
     backgroundSize: full
     title: Siddh Shah
-    subtitle: ''
+    subtitle: >-
+      I'm a computer engineering student at the University of Illinois with a
+      passion for autonomous robotics, computer vision, and hardware
+      acceleration.
     styles:
       self:
         height: auto
