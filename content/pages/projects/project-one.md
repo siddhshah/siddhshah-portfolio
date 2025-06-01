@@ -1,6 +1,6 @@
 ---
 type: ProjectLayout
-title: A very cool code project
+title: Galaxy Classification
 colors: colors-a
 date: '2021-10-15'
 client: Awesome client
