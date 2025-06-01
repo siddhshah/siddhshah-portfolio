@@ -70,7 +70,7 @@
         "contacts": {
             "type": "ContactBlock",
             "title": "Contact details",
-            "phoneNumber": "850-123-5021",
+            "phoneNumber": "",
             "phoneAltText": "My phone number",
             "email": "siddh.shah90@gmail.com",
             "emailAltText": "My email",
