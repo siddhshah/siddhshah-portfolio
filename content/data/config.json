@@ -74,7 +74,7 @@
             "phoneAltText": "My phone number",
             "email": "thisismyemail.@myemail.me",
             "emailAltText": "My email",
-            "address": "Monmouth Junction, NJ | Champaign, IL",
+            "address": "Monmouth Junction, NJ",
             "addressAltText": "My address"
         },
         "copyrightText": "Powered by [Netlify](https://www.netlify.com/)",
