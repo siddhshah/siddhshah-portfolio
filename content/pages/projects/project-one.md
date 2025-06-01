@@ -4,7 +4,9 @@ title: Galaxy Classification
 colors: colors-a
 date: '2021-10-15'
 client: Awesome client
-description: 'JAX-based deep net to distinguish galaxy types based on images from the '
+description: >-
+  JAX-based deep net to distinguish galaxy types based on images from the Sloan
+  Digital Sky Survey (SDSS) dataset.
 featuredImage:
   type: ImageBlock
   url: /images/Screenshot 2025-06-01 031604.png
