@@ -52,6 +52,16 @@
             },
             {
                 "type": "Link",
+                "label": "Contact (University of Illinois)",
+                "altText": "",
+                "url": "mailto:siddh2@illinois.edu",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "elementId": ""
+            },
+            {
+                "type": "Link",
                 "label": "GitHub",
                 "url": "https://github.com/netlify-templates",
                 "altText": "Netlify templates"
@@ -61,16 +71,6 @@
                 "label": "LinkedIn",
                 "altText": "LinkedIn",
                 "url": "https://www.linkedin.com/in/siddhshah05",
-                "showIcon": false,
-                "icon": "arrowRight",
-                "iconPosition": "right",
-                "elementId": ""
-            },
-            {
-                "type": "Link",
-                "label": "Contact (University of Illinois)",
-                "altText": "",
-                "url": "mailto:siddh2@illinois.edu",
                 "showIcon": false,
                 "icon": "arrowRight",
                 "iconPosition": "right",
