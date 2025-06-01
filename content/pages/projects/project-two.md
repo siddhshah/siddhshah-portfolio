@@ -9,7 +9,7 @@ description: >-
   Spartan-7 FPGA for better object navigation in autonomous robots.
 featuredImage:
   type: ImageBlock
-  url: /images/bg2.jpg
+  url: /images/IMG_5278.jpg
   altText: Project thumbnail image
 media:
   type: ImageBlock
