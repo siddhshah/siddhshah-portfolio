@@ -65,7 +65,7 @@
             {
                 "type": "Link",
                 "label": "LinkedIn",
-                "altText": "",
+                "altText": "LinkedIn",
                 "url": "https://www.linkedin.com/in/siddhshah05",
                 "showIcon": false,
                 "icon": "arrowRight",
