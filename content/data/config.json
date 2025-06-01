@@ -70,7 +70,7 @@
                 "type": "Link",
                 "label": "Contact (University of Illinois)",
                 "altText": "",
-                "url": "/",
+                "url": "mailto:siddh2@illinois.edu",
                 "showIcon": false,
                 "icon": "arrowRight",
                 "iconPosition": "right",
