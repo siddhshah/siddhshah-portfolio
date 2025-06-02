@@ -78,7 +78,7 @@ bottomSections:
     subtitle: ''
     text: |
       This radar mapping system begins with a breadboar
-    colors: colors-a
+    colors: colors-e
     variant: variant-b
     elementId: ''
     styles:
