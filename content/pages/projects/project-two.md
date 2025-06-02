@@ -136,13 +136,25 @@ bottomSections:
         textAlign: center
   - type: TextSection
     title: ''
-    text: >-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    text: >
+      The HC-SR04 Ultrasonic Sensor has 4 pins: TRIG, ECHO, Vcc, GND. All pins
+      (except GND) operate at a 5 volt input. I did not have a 5 volt power
+      supply on hand (my FPGA only outputs 3.3 V), so I created a voltage
+      divider circuit to step down a 9 V load to 5 V. 
+
+
+      The TRIG pin is the input: a short pulse is sent to the sensor (generated
+      from a finite state machine), signaling it to record a measurement. The
+      sensor does this by outputting an 8-cycle sonic burst. 
+
+
+      Upon reception of the reflected burst, the sensor outputs an ECHO signal
+      that remains high for a duration proportional to the time it took for the
+      8-cycle burst to come back to the sensor after it was sent. A longer time
+      between sending and receiving indicates the burst traveled a longer
+      distance before it was reflected back by the nearest object, or traveled
+      for less time if the burst came back quicker. Therefore, the longer the
+      ECHO, the farther the object.
     colors: colors-f
     variant: variant-a
     elementId: ''
