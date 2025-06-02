@@ -180,7 +180,7 @@ bottomSections:
       Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-    colors: colors-d
+    colors: colors-c
     variant: variant-b
     elementId: ''
     styles:
