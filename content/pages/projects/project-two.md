@@ -23,6 +23,12 @@ bottomSections:
       sensor-based detection and examine the benefits of using an FPGA over a
       standard C/C++-based microcontroller e.g. Arduino, all while testing the
       hardware limitations of an FPGA for real-time data processing.
+
+
+      Split into three main parts, this project exercises proficiency in
+      breadboard circuit debugging, optimization of large-scale SystemVerilog
+      projects in Xilinx Vivado, and ability to modify design considerations
+      on-the-go.
     colors: colors-f
     variant: variant-a
     elementId: ''
