@@ -171,7 +171,7 @@ bottomSections:
           - pr-4
         textAlign: left
   - type: TextSection
-    title: 'Part 2: '
+    title: 'Part 2: Data Processing and DSP Filtering'
     subtitle: The section subtitle
     text: >-
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
