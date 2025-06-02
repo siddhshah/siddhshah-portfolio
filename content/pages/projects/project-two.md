@@ -1,7 +1,7 @@
 ---
 type: ProjectLayout
 title: FPGA-Based Ultrasonic Radar
-colors: colors-c
+colors: colors-a
 date: '2025-05-08'
 client: ''
 description: >-
