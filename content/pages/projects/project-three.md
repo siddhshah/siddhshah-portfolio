@@ -7,10 +7,6 @@ client: Awesome client
 description: >-
   Uses a convolutional neural network to perform background-foreground
   separation on layered elements in varied-resolution media.
-featuredImage:
-  type: ImageBlock
-  altText: Project thumbnail image
-  url: /images/img.png
 media:
   type: ImageBlock
   url: /images/bg3.jpg
