@@ -95,7 +95,7 @@ bottomSections:
         textAlign: left
   - type: MediaGallerySection
     title: ''
-    subtitle: This is the subtitle
+    subtitle: ''
     images:
       - type: ImageBlock
         url: /images/IMG_5279.jpg
