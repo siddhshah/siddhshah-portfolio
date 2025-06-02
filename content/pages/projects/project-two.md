@@ -76,8 +76,10 @@ bottomSections:
   - type: TextSection
     title: 'Part 1: Sensor Circuit'
     subtitle: ''
-    text: |
-      This radar mapping system begins with a breadboar
+    text: >
+      The radar mapping system begins with a simple breadboard circuit
+      containing the ultrasonic sensor, voltage dividers, and a debugging LED,
+      where GND, TRIG, and ECHO are fed into the FPGA's GPIO pins.
     colors: colors-e
     variant: variant-b
     elementId: ''
