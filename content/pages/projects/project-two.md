@@ -139,13 +139,15 @@ bottomSections:
     text: >
       The HC-SR04 Ultrasonic Sensor has 4 pins: TRIG, ECHO, Vcc, GND. All pins
       (except GND) operate at a 5 volt input. I did not have a 5 volt power
-      supply on hand (my FPGA only outputs 3.3 V), so I created a voltage
-      divider circuit to step down a 9 V load to 5 V. 
+      supply on hand (my RealDigital Urbana Board only outputs 3.3 V), so I
+      created a voltage divider circuit to step down a 9 V load to 5 V. The ECHO
+      also outputted 5 V, which had to be stepped down to 3.3 V (as the FPGA
+      only expects 3.3 V GPIO inputs).
 
 
       The TRIG pin is the input: a short pulse is sent to the sensor (generated
       from a finite state machine), signaling it to record a measurement. The
-      sensor does this by outputting an 8-cycle sonic burst. 
+      sensor does this by outputting an 8-cycle sonic burst.
 
 
       Upon reception of the reflected burst, the sensor outputs an ECHO signal
