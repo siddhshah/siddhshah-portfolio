@@ -172,7 +172,7 @@ bottomSections:
         textAlign: left
   - type: TextSection
     title: 'Part 2: Data Processing and DSP Filtering'
-    subtitle: ''
+    subtitle: Xilinx Vivado
     text: >-
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
