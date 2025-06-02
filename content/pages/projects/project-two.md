@@ -13,6 +13,6 @@ featuredImage:
   altText: Black-and-green radar
 media:
   type: ImageBlock
-  url: /images/bg2.jpg
+  url: /images/IMG_5280.jpg
   altText: Project image
 ---
