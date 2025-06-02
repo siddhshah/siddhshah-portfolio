@@ -45,13 +45,8 @@ bottomSections:
   - type: TextSection
     title: 'Part 1: Sensor Circuit'
     subtitle: ''
-    text: >-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    text: |
+      This radar mapping system begins with a breadboar
     colors: colors-a
     variant: variant-b
     elementId: ''
