@@ -19,13 +19,21 @@ bottomSections:
   - type: TextSection
     title: Introduction
     subtitle: ''
-    text: >-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    text: >
+      This is a SystemVerilog-based 1D ultrasonic radar using the HC-SR04
+      ultrasonic sensor and a Xilinx Spartan-7 FPGA that outputs real-time
+      distance data for the closest object to the sensor.
+
+
+      Distance is displayed through a live centimeter-based distance tracker,
+      and a red on-screen 'X' will move along the screen based on the object's
+      live position changes. Positional benchmarks are included for the user.
+      Distance range is 2-400 cm.
+
+
+      Moving within 15 centimeters of the sensor will play an aggressive audio
+      alert on the connected audio device and rapidly flash the screen in red
+      and black.
     colors: colors-f
     variant: variant-a
     elementId: ''
