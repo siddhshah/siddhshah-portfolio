@@ -17,7 +17,7 @@ media:
   altText: Project image
 bottomSections:
   - type: TextSection
-    title: The Section Title
+    title: Introduction
     subtitle: The section subtitle
     text: >-
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
