@@ -201,7 +201,7 @@ bottomSections:
     subtitle: ''
     images:
       - type: ImageBlock
-        url: /images/gallery-1.jpg
+        url: /images/Screenshot 2025-06-02 200927.png
         altText: Image one
         caption: Image one caption
         elementId: ''
