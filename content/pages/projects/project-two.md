@@ -175,7 +175,10 @@ bottomSections:
     subtitle: Xilinx Vivado
     text: >
       The next step is to receive the ECHO signal from the electronic circuit
-      and process it into a usable distance value.
+      and process it into a usable distance value. This data processing was done
+      in Xilinx Vivado using SystemVerilog. Due to the I/O structure of the
+      breadboard-FPGA system, all debugging had to be done on hardware and not
+      through behavioral simulations.
     colors: colors-c
     variant: variant-b
     elementId: ''
