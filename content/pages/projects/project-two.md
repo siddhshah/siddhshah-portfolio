@@ -173,13 +173,9 @@ bottomSections:
   - type: TextSection
     title: 'Part 2: Data Processing and DSP Filtering'
     subtitle: Xilinx Vivado
-    text: >-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    text: >
+      The next step is to receive the ECHO signal from the electronic circuit
+      and process it into a usable distance value.
     colors: colors-c
     variant: variant-b
     elementId: ''
