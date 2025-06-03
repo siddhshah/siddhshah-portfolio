@@ -157,6 +157,10 @@ bottomSections:
       distance before it was reflected back by the nearest object, or traveled
       for less time if the burst came back quicker. Therefore, the longer the
       ECHO, the farther the object.
+
+
+      A blue LED was wired to the ECHO pin for simple inspection based
+      debugging--LED pulse length should be proportional to object distance.
     colors: colors-f
     variant: variant-a
     elementId: ''
