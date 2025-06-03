@@ -307,7 +307,7 @@ bottomSections:
         caption: Image one caption
         elementId: ''
       - type: ImageBlock
-        url: /images/Screenshot 2025-06-02 202106.png
+        url: /images/Screenshot 2025-06-02 202038.png
         altText: Image two
         caption: Image two caption
         elementId: ''
@@ -328,52 +328,4 @@ bottomSections:
           - pl-4
           - pr-4
         textAlign: center
-  - type: TextSection
-    title: ''
-    text: >+
-      The distance is scaled to fit on a 640-pixel long VGA display, and an
-      object mapper module places a red X on the screen based on the current
-      pixel distance, converted from the filtered distance register. This object
-      mapper module also assigns the left-hand side of the screen to 2 cm and
-      the right-hand side to 400 cm, accurately representing the physical
-      constraints of the sensor. Visual benchmarks in the style of a standard
-      radar or measuring devices are generated for user benefit.
-
-
-      A live counter displays the distance, in centimeters, of the object from
-      the ultrasonic sensor. A font read-only-memory (ROM) is used to draw the
-      dynamically-changing 16x8 pixel ASCII numbers based on a binary
-      (background/foreground) coloring scheme.
-
-
-      A proximity alert module drives an alert signal high whenever the object
-      reaches within 15 centimeters of the sensor. This parameter, calculated
-      via (THRESHOLD\_DISTANCE\_CM \* 2 \* 100 / 0.0343 \[decimal] -->
-      THRESHOLD\_DISTANCE \[hex]), can be changed in the proximity alert module
-      if a different threshold is desired. A tone generator then creates an
-      oscillating square wave at a given frequency, wired to the auxiliary audio
-      outputs of the FPGA (when the alert signal is high) to produce a sustained
-      beep when the object is in proximity. 
-
-
-      This alert signal is also used in a color mapper module, which creates the
-      color scheme for the on-screen visuals, to flash the screen in red and
-      black every 0.5 seconds. An RGB LED is wired to the alert signal for
-      debugging purposes.
-
-
-
-    colors: colors-f
-    variant: variant-a
-    elementId: ''
-    styles:
-      self:
-        height: auto
-        width: narrow
-        padding:
-          - pt-28
-          - pb-28
-          - pl-4
-          - pr-4
-        textAlign: left
 ---
