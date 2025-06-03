@@ -246,7 +246,7 @@ bottomSections:
       Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-    colors: colors-f
+    colors: colors-c
     variant: variant-a
     elementId: ''
     styles:
