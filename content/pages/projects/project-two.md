@@ -279,7 +279,7 @@ bottomSections:
         textAlign: left
   - type: TextSection
     title: 'Part 3: Data Visualization'
-    subtitle: The section subtitle
+    subtitle: HDMI-to-VGA Display Monitor
     text: >-
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
