@@ -239,13 +239,31 @@ bottomSections:
         textAlign: center
   - type: TextSection
     title: ''
-    text: >-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    text: >+
+      When the FPGA receives the ECHO signal, it is converted into a tick-based
+      raw distance (22 bit-wide register), processed through clock-based (100
+      MHz) counter logic and the aforementioned FSM. This data is then sent
+      through a variety of DSP filters:
+
+
+      *   A median-of-3 filter, which smooths data by taking the median of the
+      first three incoming distance samples through use of a shift register,
+
+          *   A median filter with a greater window e.g. median-of-5 or median-of-7 will provide greater noise removal at the cost of timing.
+
+      *   a clamping filter, which removes arbitrary spikes caused by dips in
+      between sensor measurements,
+
+
+      *   and a deadband filter, which silences 1-2 pixel jitters in the
+      on-screen's object position changes. These filters lead to a greatly
+      effective stabilization of measurement data and smooth out a vast majority
+      of any noise produced by the sensor.
+
+
+      The final result was an impressively-stable distance measurement per
+      measurement cycle, stored as clock-based (100 MHz) ticks.
+
     colors: colors-c
     variant: variant-a
     elementId: ''
