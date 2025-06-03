@@ -278,7 +278,7 @@ bottomSections:
           - pr-4
         textAlign: left
   - type: TextSection
-    title: The Section Title
+    title: 'Part 3: Data Visualization'
     subtitle: The section subtitle
     text: >-
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
