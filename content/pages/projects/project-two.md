@@ -307,7 +307,7 @@ bottomSections:
         caption: Image one caption
         elementId: ''
       - type: ImageBlock
-        url: /images/Screenshot 2025-06-02 202038.png
+        url: /images/Screenshot 2025-06-02 202106.png
         altText: Image two
         caption: Image two caption
         elementId: ''
