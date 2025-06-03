@@ -264,7 +264,7 @@ bottomSections:
       The final result was an impressively-stable distance measurement per
       measurement cycle, stored as clock-based (100 MHz) ticks.
 
-    colors: colors-c
+    colors: colors-a
     variant: variant-a
     elementId: ''
     styles:
