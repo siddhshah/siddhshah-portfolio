@@ -280,13 +280,10 @@ bottomSections:
   - type: TextSection
     title: 'Part 3: Data Visualization'
     subtitle: HDMI-to-VGA Display Monitor
-    text: >-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    text: >
+      To show off the results, I created object and pixel mapping modules to
+      scale the distance down to centimeters, and use Vivado/RealDigital IPs to
+      configure the data to be sent through an HDMI-to-VGA display adapter.
     colors: colors-d
     variant: variant-b
     elementId: ''
