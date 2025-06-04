@@ -227,7 +227,7 @@ bottomSections:
       scale the distance down to centimeters, and use Vivado/RealDigital IPs to
       configure the data to be sent through an HDMI-to-VGA display adapter.
     colors: colors-d
-    variant: variant-b
+    variant: variant-a
     elementId: ''
     styles:
       self:
