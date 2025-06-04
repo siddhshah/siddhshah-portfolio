@@ -150,10 +150,12 @@ bottomSections:
       through behavioral simulations.
 
 
+      ![](/images/Screenshot%202025-06-02%20200927.png)
 
 
-      ![](/images/Screenshot%202025-06-02%20200927.png)![](/images/Screenshot%202025-05-11%20160732.png)Top-level
-      RTL diagram
+      Median-of-3 filter code, utilizing a shift
+      register![](/images/Screenshot%202025-05-11%20160732.png)Top-level RTL
+      diagram
 
 
       ![](/images/Screenshot%202025-05-11%20161020.png)
