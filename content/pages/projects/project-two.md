@@ -149,7 +149,7 @@ bottomSections:
       breadboard-FPGA system, all debugging had to be done on hardware and not
       through behavioral simulations.
     colors: colors-c
-    variant: variant-b
+    variant: variant-a
     elementId: ''
     styles:
       self:
