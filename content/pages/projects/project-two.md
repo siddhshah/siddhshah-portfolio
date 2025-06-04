@@ -87,7 +87,7 @@ bottomSections:
       ![](/images/IMG_5279.jpg)![](/images/IMG_5158.jpg)![](/images/Screenshot%202025-05-12%20184126.png)![](/images/Screenshot%202025-05-11%20160018.png)Schematics
       were generated using Fritzing.
     colors: colors-e
-    variant: variant-b
+    variant: variant-a
     elementId: ''
     styles:
       self:
