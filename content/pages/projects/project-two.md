@@ -80,8 +80,14 @@ bottomSections:
       The radar mapping system begins with a simple breadboard circuit
       containing the ultrasonic sensor, voltage dividers, and a debugging LED,
       where GND, TRIG, and ECHO are fed into the FPGA's GPIO pins.
+
+
+
+
+      ![](/images/IMG_5279.jpg)![](/images/IMG_5158.jpg)![](/images/Screenshot%202025-05-12%20184126.png)![](/images/Screenshot%202025-05-11%20160018.png)Schematics
+      were generated using Fritzing.
     colors: colors-e
-    variant: variant-b
+    variant: variant-a
     elementId: ''
     styles:
       self:
@@ -93,47 +99,6 @@ bottomSections:
           - pl-4
           - pr-4
         textAlign: left
-  - type: MediaGallerySection
-    title: ''
-    subtitle: ''
-    images:
-      - type: ImageBlock
-        url: /images/IMG_5279.jpg
-        altText: Image one
-        caption: Image one caption
-        elementId: ''
-      - type: ImageBlock
-        url: /images/IMG_5158.jpg
-        altText: Image two
-        caption: Image two caption
-        elementId: ''
-      - type: ImageBlock
-        url: /images/Screenshot 2025-05-12 184126.png
-        altText: Image three
-        caption: Image three caption
-        elementId: ''
-      - type: ImageBlock
-        url: /images/Screenshot 2025-05-11 160018.png
-        altText: Image four
-        caption: Image four caption
-        elementId: ''
-    colors: colors-e
-    spacing: 16
-    columns: 2
-    aspectRatio: '1:1'
-    showCaption: false
-    enableHover: false
-    elementId: ''
-    styles:
-      self:
-        height: auto
-        width: narrow
-        padding:
-          - pt-12
-          - pb-12
-          - pl-4
-          - pr-4
-        textAlign: center
   - type: TextSection
     title: ''
     text: >
@@ -183,8 +148,28 @@ bottomSections:
       in Xilinx Vivado using SystemVerilog. Due to the I/O structure of the
       breadboard-FPGA system, all debugging had to be done on hardware and not
       through behavioral simulations.
+
+
+      ![](/images/Screenshot%202025-06-02%20200927.png)
+
+
+      Median-of-3 filter code, utilizing a shift
+      register![](/images/Screenshot%202025-05-11%20160732.png)Top-level RTL
+      diagram
+
+
+      ![](/images/Screenshot%202025-05-11%20161020.png)
+
+
+      Primary sensor module RTL diagram
+
+
+      ![](/images/Screenshot%202025-06-02%20201240.png)
+
+
+      Example ECHO/TRIG I/O simulation
     colors: colors-c
-    variant: variant-b
+    variant: variant-a
     elementId: ''
     styles:
       self:
@@ -196,47 +181,6 @@ bottomSections:
           - pl-4
           - pr-4
         textAlign: left
-  - type: MediaGallerySection
-    title: ''
-    subtitle: ''
-    images:
-      - type: ImageBlock
-        url: /images/Screenshot 2025-06-02 200927.png
-        altText: Image one
-        caption: Image one caption
-        elementId: ''
-      - type: ImageBlock
-        url: /images/Screenshot 2025-05-11 160732.png
-        altText: Image two
-        caption: Image two caption
-        elementId: ''
-      - type: ImageBlock
-        url: /images/Screenshot 2025-05-11 161030.png
-        altText: altText of the image
-        caption: Caption of the image
-        elementId: ''
-      - type: ImageBlock
-        url: /images/Screenshot 2025-06-02 201240.png
-        altText: altText of the image
-        caption: Caption of the image
-        elementId: ''
-    colors: colors-c
-    spacing: 16
-    columns: 2
-    aspectRatio: '1:1'
-    showCaption: false
-    enableHover: false
-    elementId: ''
-    styles:
-      self:
-        height: auto
-        width: narrow
-        padding:
-          - pt-12
-          - pb-12
-          - pl-4
-          - pr-4
-        textAlign: center
   - type: TextSection
     title: ''
     text: >+
@@ -284,8 +228,20 @@ bottomSections:
       To show off the results, I created object and pixel mapping modules to
       scale the distance down to centimeters, and use Vivado/RealDigital IPs to
       configure the data to be sent through an HDMI-to-VGA display adapter.
+
+
+      ![](/images/Screenshot%202025-06-02%20202038.png)
+
+
+      Object mapper code
+
+
+      ![](/images/IMG_5278.jpg)
+
+
+      Final radar display
     colors: colors-d
-    variant: variant-b
+    variant: variant-a
     elementId: ''
     styles:
       self:
@@ -297,37 +253,6 @@ bottomSections:
           - pl-4
           - pr-4
         textAlign: left
-  - type: MediaGallerySection
-    title: ''
-    subtitle: ''
-    images:
-      - type: ImageBlock
-        url: /images/IMG_5278.jpg
-        altText: Image one
-        caption: Image one caption
-        elementId: ''
-      - type: ImageBlock
-        url: /images/Screenshot 2025-06-02 202038.png
-        altText: Image two
-        caption: Image two caption
-        elementId: ''
-    colors: colors-d
-    spacing: 16
-    columns: 2
-    aspectRatio: '1:1'
-    showCaption: false
-    enableHover: false
-    elementId: ''
-    styles:
-      self:
-        height: auto
-        width: narrow
-        padding:
-          - pt-12
-          - pb-12
-          - pl-4
-          - pr-4
-        textAlign: center
   - type: TextSection
     title: ''
     text: >
