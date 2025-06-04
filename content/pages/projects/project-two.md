@@ -375,13 +375,32 @@ bottomSections:
         textAlign: left
   - type: TextSection
     title: More Design Considerations
-    text: >-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    text: >+
+      The initial design for this radar was 2-dimensional, accomplished through
+      situating the HC-SR04 ultrasonic radar on a rotating HS-013 servo motor,
+      where the VGA display would show the N closest objects to the sensor-motor
+      system, constantly rotating through its active range and scanning for new
+      objects, all with the same functionality (e.g. proximity alerts) as shown
+      above. However, voltage load issues (due to the lack of a voltage
+      regulator on-hand) and time constraints, the system was scaled down to a
+      1-dimensional version, which could only capture a single object's
+      position.
+
+
+      Furthermore, data visualization was considered through Python, where a
+      simple MicroBlaze SoC-based UART module would send the distance data to
+      the serial monitor in Vitis HLS and captured by a Python script. Although
+      filter design would have been more effective in a scripting language such
+      as Python with its extensive SciPy signal libraries, the timing delay
+      caused by data transmission would have rendered the "efficiency" portion
+      of the radar system nearly useless.
+
+
+      ### For code and design specifics/diagrams:
+
+
+      <https://github.com/siddhshah/FPGA-UltrasonicRadar>
+
     colors: colors-f
     variant: variant-a
     elementId: ''
