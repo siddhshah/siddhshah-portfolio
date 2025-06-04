@@ -228,12 +228,16 @@ bottomSections:
       configure the data to be sent through an HDMI-to-VGA display adapter.
 
 
-
-
       ![](/images/Screenshot%202025-06-02%20202038.png)
 
 
       Object mapper code
+
+
+      ![](/images/IMG_5278.jpg)
+
+
+      Final radar display
     colors: colors-d
     variant: variant-a
     elementId: ''
