@@ -148,6 +148,24 @@ bottomSections:
       in Xilinx Vivado using SystemVerilog. Due to the I/O structure of the
       breadboard-FPGA system, all debugging had to be done on hardware and not
       through behavioral simulations.
+
+
+
+
+      ![](/images/Screenshot%202025-06-02%20200927.png)![](/images/Screenshot%202025-05-11%20160732.png)Top-level
+      RTL diagram
+
+
+      ![](/images/Screenshot%202025-05-11%20161020.png)
+
+
+      Primary sensor module RTL diagram
+
+
+      ![](/images/Screenshot%202025-06-02%20201240.png)
+
+
+      Example ECHO/TRIG I/O simulation
     colors: colors-c
     variant: variant-a
     elementId: ''
