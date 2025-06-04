@@ -3,7 +3,7 @@ type: ProjectLayout
 title: Semantic Segmentation
 colors: colors-a
 date: '2024-12-20'
-client: Awesome client
+client: ''
 description: >-
   Uses a convolutional neural network to perform background-foreground
   separation on layered elements in varied-resolution media.
