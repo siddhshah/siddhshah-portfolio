@@ -247,37 +247,6 @@ bottomSections:
           - pl-4
           - pr-4
         textAlign: left
-  - type: MediaGallerySection
-    title: ''
-    subtitle: ''
-    images:
-      - type: ImageBlock
-        url: /images/IMG_5278.jpg
-        altText: Image one
-        caption: Image one caption
-        elementId: ''
-      - type: ImageBlock
-        url: /images/Screenshot 2025-06-02 202038.png
-        altText: Image two
-        caption: Image two caption
-        elementId: ''
-    colors: colors-d
-    spacing: 16
-    columns: 2
-    aspectRatio: '1:1'
-    showCaption: false
-    enableHover: false
-    elementId: ''
-    styles:
-      self:
-        height: auto
-        width: narrow
-        padding:
-          - pt-12
-          - pb-12
-          - pl-4
-          - pr-4
-        textAlign: center
   - type: TextSection
     title: ''
     text: >
