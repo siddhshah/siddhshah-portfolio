@@ -226,6 +226,14 @@ bottomSections:
       To show off the results, I created object and pixel mapping modules to
       scale the distance down to centimeters, and use Vivado/RealDigital IPs to
       configure the data to be sent through an HDMI-to-VGA display adapter.
+
+
+
+
+      ![](/images/Screenshot%202025-06-02%20202038.png)
+
+
+      Object mapper code
     colors: colors-d
     variant: variant-a
     elementId: ''
