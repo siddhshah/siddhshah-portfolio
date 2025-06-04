@@ -9,7 +9,7 @@ description: >-
   separation on layered elements in varied-resolution media.
 media:
   type: ImageBlock
-  url: /images/bg3.jpg
+  url: /images/img.png
   altText: Project image
 featuredImage:
   type: ImageBlock
