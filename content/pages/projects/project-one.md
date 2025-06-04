@@ -3,7 +3,7 @@ type: ProjectLayout
 title: Galaxy Classification
 colors: colors-a
 date: '2021-10-15'
-client: Awesome client
+client: ''
 description: >-
   JAX-based deep net to distinguish galaxy types based on images from the Sloan
   Digital Sky Survey (SDSS) dataset.
