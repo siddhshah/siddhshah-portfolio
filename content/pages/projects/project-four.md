@@ -1,6 +1,6 @@
 ---
 type: ProjectLayout
-title: ''
+title: 'STM32-Embedded '
 date: '2025-06-17'
 client: Awesome client
 description: >-
