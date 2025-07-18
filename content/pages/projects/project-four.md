@@ -17,7 +17,7 @@ media:
   type: ImageBlock
   url: /images/IMG_5640.jpg
   altText: Project image
-  caption: Caption of the image
+  caption: 'IN PROGRESS: See https://github.com/siddhshah/GestureClassification'
   elementId: ''
 addTitleSuffix: true
 colors: colors-a
