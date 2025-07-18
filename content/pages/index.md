@@ -46,10 +46,10 @@ sections:
     showReadMoreLink: true
     variant: variant-b
     projects:
+      - content/pages/projects/STM32-Embedded-Gesture-Classifier.md
       - content/pages/projects/project-two.md
       - content/pages/projects/project-three.md
       - content/pages/projects/project-one.md
-      - content/pages/projects/STM32-Embedded-Gesture-Classifier.md
     styles:
       self:
         height: auto
