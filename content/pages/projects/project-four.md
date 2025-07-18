@@ -1,6 +1,6 @@
 ---
 type: ProjectLayout
-title: STM32-Embedded g
+title: STM32-Embedded Gesture Cl
 date: '2025-06-17'
 client: Awesome client
 description: >-
