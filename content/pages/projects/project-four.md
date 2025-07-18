@@ -4,8 +4,9 @@ title: ''
 date: '2025-06-17'
 client: Awesome client
 description: >-
-  Nunc rutrum felis dui, ut consequat sapien scelerisque vel. Integer
-  condimentum dignissim justo vel faucibus.
+  Lightweight CNN to classify various hand motions through an I2C-interfaced
+  ADXL345 accelerometer, deployed onto an STM32 Nucleo using TensorFlow Lite
+  Micro.
 featuredImage:
   type: ImageBlock
   url: 'https://assets.stackbit.com/components/images/default/post-4.jpeg'
