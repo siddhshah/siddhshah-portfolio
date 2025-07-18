@@ -2,7 +2,7 @@
 type: ProjectLayout
 title: STM32-Embedded Gesture Classifier
 date: '2025-06-17'
-client: Awesome client
+client: ''
 description: >-
   Lightweight CNN to classify various hand motions through an I2C-interfaced
   ADXL345 accelerometer, deployed onto an STM32 Nucleo using TensorFlow Lite
