@@ -1,9 +1,6 @@
 ---
 type: ProjectLayout
-title: >-
-  Lightweight CNN to classify various hand motions through an I2C-interfaced
-  ADXL345 accelerometer, deployed onto an STM32 Nucleo using TensorFlow Lite
-  Micro.
+title: ''
 date: '2025-06-17'
 client: Awesome client
 description: >-
