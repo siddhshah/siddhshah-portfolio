@@ -30,7 +30,7 @@ backgroundImage:
   opacity: 100
 bottomSections:
   - type: TextSection
-    title: The Section Title
+    title: WIP
     text: |
       IN PROGRESS: See <https://github.com/siddhshah/GestureClassification>
     colors: colors-f
