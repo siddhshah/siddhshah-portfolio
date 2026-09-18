@@ -15,9 +15,9 @@ sections:
     backgroundSize: full
     title: Siddh Shah
     subtitle: >-
-      Computer Engineering student at the University of Illinois with a passion
-      for autonomous robots, computer vision, and FPGA-accelerated hardware
-      applications.
+      Computer Engineering student at the University of Illinois, working where
+      software meets silicon — GPU kernels, processor architecture, and embedded
+      systems.
     styles:
       self:
         height: auto
@@ -46,9 +46,9 @@ sections:
     showReadMoreLink: true
     variant: variant-b
     projects:
+      - content/pages/projects/project-five.md
+      - content/pages/projects/project-six.md
       - content/pages/projects/project-two.md
-      - content/pages/projects/project-three.md
-      - content/pages/projects/project-one.md
     styles:
       self:
         height: auto

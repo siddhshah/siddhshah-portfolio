@@ -14,15 +14,14 @@ sections:
     colors: colors-f
     backgroundSize: full
     text: >+
-      # Hey I’m a developer. I’ve been born and raised in the world, and that’s
-      also where I’m based. I’m currently a free agent, ex-this, ex-that,
-      ex-super big name. When I’m not coding, writing or creating, I eat
-      cereals. I have a dog, check her out [@mygod](https://www.stackbit.com/).
+      # Hey, I’m Siddh. I’m a computer engineering student at the University of
+      Illinois Urbana-Champaign, graduating in December 2026. I like the layer
+      where software stops being an abstraction and starts being a circuit —
+      CUDA kernels, out-of-order RTL, and bare-metal firmware. Right now I’m
+      writing test-platform firmware for satellite payload modules at Orion
+      Space Solutions and studying lossless attention compression with
+      OpenMachine.ai.
 
-    media:
-      type: ImageBlock
-      url: /images/about.jpg
-      altText: Hero image
     styles:
       self:
         height: auto
@@ -50,151 +49,60 @@ sections:
           - pr-4
         borderWidth: 1
         borderStyle: solid
-  - type: MediaGallerySection
-    colors: colors-f
-    subtitle: 'I worked with these folks:'
-    images:
-      - type: ImageBlock
-        url: /images/logo1.svg
-        altText: Logo one
-        caption: Logo one
-      - type: ImageBlock
-        url: /images/logo2.svg
-        altText: Logo two
-        caption: Logo two
-      - type: ImageBlock
-        url: /images/logo3.svg
-        altText: Logo three
-        caption: Logo three
-      - type: ImageBlock
-        url: /images/logo4.svg
-        altText: Logo four
-        caption: Logo four
-      - type: ImageBlock
-        url: /images/logo5.svg
-        altText: Logo five
-        caption: Logo five
-    spacing: 3
-    columns: 5
-    aspectRatio: auto
-    showCaption: false
-    enableHover: false
-    styles:
-      self:
-        width: wide
-        height: auto
-        padding:
-          - pt-8
-          - pb-8
-          - pl-4
-          - pr-4
-        textAlign: left
-  - type: DividerSection
-    styles:
-      self:
-        width: wide
-        padding:
-          - pt-8
-          - pb-8
-          - pl-4
-          - pr-4
-        borderWidth: 1
-        borderStyle: solid
-  - type: FeaturedItemsSection
-    subtitle: 'You can find me here:'
-    colors: colors-f
-    items:
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: GitHub
-            url: 'https://github.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: Twitter
-            url: 'https://twitter.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: LinkedIn
-            url: 'https://www.linkedin.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: CodePen
-            url: 'https://codepen.io/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: Discord
-            url: 'https://discord.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: Instagram
-            url: 'https://www.instagram.com/'
-        styles:
-          self:
-            textAlign: left
-    columns: 3
-    spacingX: 120
-    spacingY: 16
-    styles:
-      self:
-        height: auto
-        width: wide
-        padding:
-          - pt-8
-          - pb-8
-          - pl-4
-          - pr-4
-  - type: DividerSection
-    styles:
-      self:
-        width: wide
-        padding:
-          - pt-12
-          - pb-12
-          - pl-4
-          - pr-4
-        borderWidth: 1
-        borderStyle: solid
   - type: LabelsSection
     colors: colors-f
-    subtitle: 'Skills:'
+    subtitle: 'Languages:'
     items:
       - type: Label
-        label: 'WEB 1, 2, 3'
+        label: Python
       - type: Label
-        label: React
+        label: C/C++
       - type: Label
-        label: Microsoft Office
+        label: CUDA C++
       - type: Label
-        label: Next.js
+        label: SystemVerilog
       - type: Label
-        label: Netlify
+        label: Java
       - type: Label
-        label: Pancakes
+        label: HTML/CSS
+  - type: LabelsSection
+    colors: colors-f
+    subtitle: 'Software and frameworks:'
+    items:
       - type: Label
-        label: C++
+        label: PyTorch
       - type: Label
-        label: Swift
+        label: TensorFlow
+      - type: Label
+        label: JAX
+      - type: Label
+        label: Nsight Compute
+      - type: Label
+        label: Nsight Systems
+      - type: Label
+        label: Xilinx Vivado
+      - type: Label
+        label: Synopsys VCS/Verdi
+      - type: Label
+        label: Qiskit
+  - type: LabelsSection
+    colors: colors-f
+    subtitle: 'Hardware and embedded:'
+    items:
+      - type: Label
+        label: STM32
+      - type: Label
+        label: RP2040
+      - type: Label
+        label: I2C
+      - type: Label
+        label: SPI
+      - type: Label
+        label: UART
+      - type: Label
+        label: AXI4
+      - type: Label
+        label: KiCAD
   - type: DividerSection
     styles:
       self:
@@ -202,23 +110,6 @@ sections:
         padding:
           - pt-12
           - pb-12
-          - pl-4
-          - pr-4
-        borderWidth: 1
-        borderStyle: solid
-  - type: TextSection
-    variant: variant-a
-    subtitle: 'Contact:'
-    colors: colors-f
-    text: |
-      [thisismyemail.@myemail.me](mailto:thisismyemail.@myemail.me)
-  - type: DividerSection
-    styles:
-      self:
-        width: wide
-        padding:
-          - pt-8
-          - pb-8
           - pl-4
           - pr-4
         borderWidth: 1
@@ -229,42 +120,30 @@ sections:
       - type: FeaturedItem
         subtitle: 'Experience:'
         text: |-
-          **Current**
+          **2026 — Present**
 
-          * freelance @freelance.me
+          * electrical engineering intern @ Orion Space Solutions, Louisville CO
 
-          **2018-2021**
+          * research collaborator @ OpenMachine.ai
 
-          * fullstack at this startup
+          **2024 — 2025**
 
-          **2015**
+          * undergraduate researcher @ Human-Centered Autonomy Lab, UIUC
 
-          * senior front-end at this place
+          **2024 — Present**
 
-          **2013**
-
-          * intern developer at a big company
-
-          **2011**
-
-          * flipping burgers
+          * membership vice president @ IEEE UIUC
         styles:
           self:
             textAlign: left
       - type: FeaturedItem
         subtitle: 'Education:'
         text: |-
-          **2015-2018**
+          **2023 — 2026**
 
-          * ba computer sciense at a semi fancy school
+          * bs computer engineering, minor in physics
 
-          **2014**
-
-          * react certificate somewhere
-
-          **2011**
-
-          * my highschool
+          * university of illinois urbana-champaign
         styles:
           self:
             textAlign: left
@@ -288,6 +167,74 @@ sections:
         padding:
           - pt-12
           - pb-12
+          - pl-4
+          - pr-4
+        borderWidth: 1
+        borderStyle: solid
+  - type: FeaturedItemsSection
+    subtitle: 'You can find me here:'
+    colors: colors-f
+    items:
+      - type: FeaturedItem
+        actions:
+          - type: Link
+            label: GitHub
+            url: 'https://github.com/siddhshah'
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions:
+          - type: Link
+            label: LinkedIn
+            url: 'https://www.linkedin.com/in/siddhshah05'
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions:
+          - type: Link
+            label: Email
+            url: 'mailto:siddh.shah90@gmail.com'
+        styles:
+          self:
+            textAlign: left
+    columns: 3
+    spacingX: 120
+    spacingY: 16
+    styles:
+      self:
+        height: auto
+        width: wide
+        padding:
+          - pt-8
+          - pb-8
+          - pl-4
+          - pr-4
+  - type: DividerSection
+    styles:
+      self:
+        width: wide
+        padding:
+          - pt-8
+          - pb-8
+          - pl-4
+          - pr-4
+        borderWidth: 1
+        borderStyle: solid
+  - type: TextSection
+    variant: variant-a
+    subtitle: 'Contact:'
+    colors: colors-f
+    text: |
+      [siddh.shah90@gmail.com](mailto:siddh.shah90@gmail.com) · [siddh2@illinois.edu](mailto:siddh2@illinois.edu)
+  - type: DividerSection
+    styles:
+      self:
+        width: wide
+        padding:
+          - pt-8
+          - pb-8
           - pl-4
           - pr-4
         borderWidth: 1
@@ -324,15 +271,10 @@ sections:
         - name: message
           label: Message
           hideLabel: true
-          placeholder: Tell me about your project
+          placeholder: What would you like to talk about?
           isRequired: true
           width: full
           type: TextareaFormControl
-        - name: updatesConsent
-          label: Sign me up to recieve my words
-          isRequired: false
-          width: full
-          type: CheckboxFormControl
       submitLabel: "Submit \U0001F680"
       styles:
         self:
