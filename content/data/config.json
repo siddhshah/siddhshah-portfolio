@@ -4,9 +4,9 @@
     "header": {
         "type": "Header",
         "headerVariant": "variant-c",
-        "isSticky": false,
-        "title": "Personal",
-        "isTitleVisible": false,
+        "isSticky": true,
+        "title": "Siddh Shah",
+        "isTitleVisible": true,
         "primaryLinks": [
             {
                 "type": "Link",

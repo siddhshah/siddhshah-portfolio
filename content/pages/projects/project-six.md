@@ -7,6 +7,18 @@ client: ''
 description: >-
   An RV32IM out-of-order core in SystemVerilog built around explicit register
   renaming, a set-associative cache hierarchy, and gshare branch prediction.
+featuredImage:
+  type: ImageBlock
+  url: /images/ooo-block-diagram.png
+  altText: Block diagram of the out-of-order RV32IM core
+media:
+  type: ImageBlock
+  url: /images/ooo-block-diagram.png
+  altText: >-
+    High-level block diagram of the out-of-order core: caches and fetch feed
+    decode and dispatch, which rename through the RAT into reservation stations,
+    the physical register file, and functional units, with results broadcast on
+    the common data bus to the reorder buffer and retire register file
 ---
 This is a synthesizable out-of-order processor for the RV32IM instruction set, written in SystemVerilog and verified in Synopsys VCS and Verdi. It was the eight-week final capstone (`mp_ooo`) for ECE 411: Computer Organization & Design at UIUC, built with Pratyush Ashok Anand and Stanley Auyeung under mentor Jason Yan — team "Branch Mispredictors."
 
@@ -18,9 +30,11 @@ What made this project interesting is that it is not graded on speed alone. The 
 
 We chose explicit register renaming (ERR) early: architectural registers `x0-x31` are decoupled from a larger physical register file, so two instructions writing the same architectural register never falsely serialize. WAW and WAR hazards disappear entirely, leaving only true RAW dependencies for the scheduler to handle, and misprediction recovery stays precise.
 
+![Dependency graphs before and after register renaming](/images/ooo-register-renaming.png "Left: architectural names a1, a2 and a4 are reused, so i3 must wait on i1 through a false dependency. Right: after renaming, every write gets its own physical register, p1 through p4, and i1 and i3 run independently.")
+
 The Register Alias Table holds the current logical-to-physical mapping plus a ready bit per row. Rename reads both combinationally, snoops the common data bus to mark results ready as they broadcast, and restores the entire map from the retirement RAT in a single cycle when a flush arrives:
 
-```
+```systemverilog
 always_ff @(posedge clk) begin
   if (rst) begin
     // identity map; x0 is hardwired to p0 and always ready
@@ -55,9 +69,11 @@ Around this sits the rest of the machinery: a free-list FIFO handing out physica
 
 Static not-taken was the first thing that had to go. A mispredicted branch costs roughly **6 cycles** of flush against **1 cycle** for a correct prediction, which makes prediction accuracy the dominant front-end lever.
 
+![Verdi waveform of the same branch mispredicted and then predicted correctly](/images/ooo-mispredict-waveform.png "The same branch, twice: the mispredict pulse flushes about 6 cycles of work, while the correctly predicted pass later in the trace costs 1.")
+
 The predictor is gshare: an 8-bit global history register XOR'd with the PC indexes a 256-entry table of 2-bit saturating counters, paired with a 32-entry BTB so a predicted-taken branch can redirect fetch immediately. In the competition branch, the BHT and BTB moved from flip-flop arrays into a compact dual-ported SRAM to cut area.
 
-```
+```systemverilog
 // use word-aligned PC bits as "PC index" (ignore bottom 2 bits) and XOR with GHR
 assign bht_idx_out  = (pc[BHT_IDX_BITS+1:2]) ^ ghr_q[BHT_IDX_BITS-1:0];
 
@@ -106,7 +122,13 @@ The provided cache was direct-mapped and write-through, and it was the single wo
 | mergesort | 0.168 | 0.418 | +148% |
 | coremark | 0.170 | 0.424 | +149% |
 
-Two more front-end and back-end additions sit on either side of it. A **streambuffer prefetcher** in front of the I-cache speculatively streams ahead of demand fetches and returns hits in a single cycle, while staying demand-priority so a prefetch never delays a real miss and invalidating itself on any redirect (+9.6% IPC on mergesort, +6.0% on aes_sha, ~0% on compression). A **post-commit store buffer** decouples ROB retirement from the data-cache write path, draining committed stores in the background and forwarding full-word hits to younger loads, with write coalescing merging repeat stores to the same address — about 2.3% average IPC for a 3.1% area increase.
+![Verdi waveform of the set-associative cache handling two tags in one set](/images/ooo-sa-cache-waveform.png "A cold miss walks IDLE → CHECK → LD, fills a way, and updates the PLRU bits. A second tag mapping to the same set lands in a different way instead of evicting the first — exactly the case the direct-mapped cache lost.")
+
+Two more front-end and back-end additions sit on either side of it. A **streambuffer prefetcher** in front of the I-cache speculatively streams ahead of demand fetches and returns hits in a single cycle, while staying demand-priority so a prefetch never delays a real miss and invalidating itself on any redirect (+9.6% IPC on mergesort, +6.0% on aes_sha, ~0% on compression).
+
+![Verdi waveform of a streambuffer cold miss](/images/ooo-streambuffer-miss.png "Streambuffer cold miss: the demand fetch goes to memory, and stream_active_q rises as the buffer starts prefetching the following lines, so the next fetches hit without their own memory round trip.")
+
+A **post-commit store buffer** decouples ROB retirement from the data-cache write path, draining committed stores in the background and forwarding full-word hits to younger loads, with write coalescing merging repeat stores to the same address — about 2.3% average IPC for a 3.1% area increase.
 
 ### Trade-offs
 

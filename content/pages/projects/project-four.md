@@ -37,7 +37,7 @@ The interesting constraint here is not the model. A gesture classifier is a smal
 
 The ADXL345 is configured over I2C into measurement mode at the ±2g range, which gives the resolution that matters for hand motion rather than for impact:
 
-```
+```c
 #define ADXL345_ADDR    (0x53 << 1)   // 7-bit address left-shifted for HAL
 #define REG_POWER_CTL   0x2D
 #define REG_DATA_FORMAT 0x31
@@ -58,7 +58,7 @@ Labeled training windows are streamed off the board over UART and captured on th
 
 Raw accelerometer data carries two things the model should never have to learn around: a gravity component that depends on how the board is being held, and high-frequency noise that has nothing to do with intentional motion. Both are removed before training, with the identical transform intended for the device:
 
-```
+```python
 # design FIR low-pass filter
 nyquist = 0.5 * sample_rate
 cutoff_norm = filter_cutoff / nyquist
@@ -82,7 +82,7 @@ A 31-tap FIR low-pass at a 20 Hz cutoff (100 Hz sampling) keeps deliberate gestu
 
 The classifier is a small 1D CNN over the `(window_size, 3)` time series — two convolution/pooling stages for feature extraction, dropout, and a dense head:
 
-```
+```python
 def build_model(input_shape, num_classes):
     m = Sequential([
         Conv1D(64, 5, activation='relu', input_shape=input_shape),
@@ -103,7 +103,7 @@ Convolution over time is the right inductive bias for this problem: a gesture is
 
 Keras floats do not fit the deployment budget. The trained model is converted with full integer quantization, using a representative dataset drawn from real collected windows so that the converter can calibrate activation ranges rather than guess them:
 
-```
+```python
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
 if quantize:
     converter.optimizations = [tf.lite.Optimize.DEFAULT]

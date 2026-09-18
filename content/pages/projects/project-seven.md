@@ -22,7 +22,7 @@ Choose `M` to be a `dk x dk` block of `O` itself, and `M⁻¹ @ O` has an identi
 
 The transform is applied per KV group so that grouped-query attention is handled correctly: every query head sharing a KV head must receive the same `M`. The arithmetic is done in fp64 regardless of how the result is stored, because inverting a near-singular block in low precision is the one place this can genuinely go wrong:
 
-```
+```python
 def matshrink_vo(param, config, storage_dtype=torch.float16):
   """Apply V-O MatShrink to all layers of a Llama-family model.
      Math in fp64; weights written back in storage_dtype.
@@ -51,7 +51,7 @@ def matshrink_vo(param, config, storage_dtype=torch.float16):
 
 "Lossless" is a strong claim, and a benchmark score is a weak way to defend it — two different models can score the same. The stronger check is to compare the composition itself, head by head, before and after the transform. On SmolLM2-135M that is 30 layers x 9 heads = **270 pairs, all passing in fp64**:
 
-```
+```python
 for layer in range(config.num_hidden_layers):
   Wv0 = param_orig[tt.weight('V', layer)].to(torch.float64).numpy().T
   Wo0 = param_orig[tt.weight('O', layer)].to(torch.float64).numpy().T

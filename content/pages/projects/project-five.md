@@ -7,6 +7,16 @@ client: ''
 description: >-
   Fused CUDA C++ convolution kernel for a LeNet-5 forward pass, using 16x16x16
   WMMA Tensor Cores to cut inference time by 36% on an NVIDIA A40.
+featuredImage:
+  type: ImageBlock
+  url: /images/cuda-thumb.png
+  altText: Nsight Compute pipe utilization chart for the WMMA kernel
+media:
+  type: ImageBlock
+  url: /images/cuda-nsight-sol-wmma.png
+  altText: >-
+    Nsight Compute Speed of Light page for the fused WMMA kernel on an NVIDIA
+    A40, showing compute throughput at 73.8% against 17.8% memory throughput
 ---
 This project is a hand-written CUDA C++ inference kernel for the forward-pass convolution of a modified LeNet-5, classifying 10,000 Fashion-MNIST images on an NVIDIA A40 GPU cluster. It was the final project for ECE 408: Applied Parallel Programming at UIUC.
 
@@ -18,7 +28,7 @@ A convolution can be rewritten as a matrix multiplication: flatten each `K x K` 
 
 The naive way to do this is to materialize the unrolled matrix in global memory. That costs an extra `K*K`-fold blowup in memory traffic before a single multiply happens. Instead, the kernel *fuses* the three stages — unroll, matmul, and the output permutation back into `(b, m, h, w)` order — so the unrolled matrix never exists anywhere but in shared memory tiles:
 
-```
+```cuda
 for (int t = 0; t < (K_unrolled + TILE_WIDTH - 1) / TILE_WIDTH; ++t) {
     const int k_mask  = t * TILE_WIDTH + tx;
     const int k_input = t * TILE_WIDTH + ty;
@@ -58,7 +68,7 @@ The tiled version still spends its time in the CUDA cores doing scalar fused mul
 
 Rewriting the inner loop around `wmma::fragment` means each warp owns one 16x16 sub-tile, loads FP16 operands out of shared memory, and accumulates in FP32 — the mixed precision is native to the fragment type, so there is no separate conversion pass:
 
-```
+```cuda
 __shared__ __half As[BLOCK_M][WMMA_K];
 __shared__ __half Bs[WMMA_K][BLOCK_N];
 __shared__ float  Cs[BLOCK_M][BLOCK_N];
@@ -82,6 +92,10 @@ for (int kt = 0; kt < num_k_tiles; ++kt) {
 
 This alone took total Op Time from 100.58 ms to 70.46 ms — a 30% improvement, and the single largest win in the project. The Nsight Compute Compute Workload Analysis page confirms *why*: the baseline shows ALU pipeline utilization at 53.2% with the Tensor row completely idle, while the WMMA kernel shows ALU at 67.1% with real Tensor pipeline activity. The Speed of Light page shifts from "balanced" to compute-heavy. The work moved onto the hardware it was supposed to move onto.
 
+![Nsight Compute Workload Analysis for the FP32 baseline kernel](/images/cuda-nsight-cwa-baseline.png "FP32 baseline on CUDA cores: ALU is the busiest pipeline at 53.2%, and all three Tensor rows are empty.")
+
+![Nsight Compute Workload Analysis for the WMMA kernel](/images/cuda-nsight-cwa-wmma.png "WMMA kernel: ALU rises to 67.1% and the Tensor All and Tensor FP rows now show activity — the matmul is running on Tensor Cores.")
+
 Stacked on top were smaller changes: the convolution mask in `__constant__` memory (read by every block, never written), `__restrict__` on all global pointers, `#pragma unroll` on the cooperative load loops, and block tile dimensions left as `-D` sweepable parameters so tiling could be tuned rather than guessed.
 
 ### Part 3: Per-layer kernel dispatch
@@ -90,7 +104,7 @@ Tensor Cores are rigid in a way that scalar code is not: a 16x16x16 fragment com
 
 The fix is to pick the fragment *shape* per layer. The `m8n32k16` variant computes 8 rows instead of 16, which for `Map_out = 4` wastes half the M dimension rather than three quarters, doubling useful fragment utilization on Conv1 to 50%:
 
-```
+```cuda
 #ifndef SMALL_M_THRESHOLD
 #define SMALL_M_THRESHOLD 8
 #endif

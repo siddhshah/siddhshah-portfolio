@@ -8,7 +8,7 @@ import Link from '@/components/atoms/Link';
 import { DynamicComponent } from '@/components/components-registry';
 import ImageBlock from '@/components/molecules/ImageBlock';
 import { PageComponentProps, ProjectLayout } from '@/types';
-import HighlightedPreBlock from '@/utils/highlighted-markdown';
+import HighlightedPreBlock, { MarkdownImage, MarkdownTable } from '@/utils/highlighted-markdown';
 import BaseLayout from '../BaseLayout';
 
 type ComponentProps = PageComponentProps &
@@ -54,8 +54,11 @@ const Component: React.FC<ComponentProps> = (props) => {
                 )}
                 {markdownContent && (
                     <Markdown
-                        options={{ forceBlock: true, overrides: { pre: HighlightedPreBlock } }}
-                        className="max-w-3xl mx-auto prose sm:prose-lg"
+                        options={{
+                            forceBlock: true,
+                            overrides: { pre: HighlightedPreBlock, img: MarkdownImage, table: MarkdownTable }
+                        }}
+                        className="max-w-3xl mx-auto prose sm:prose-lg project-body"
                     >
                         {markdownContent}
                     </Markdown>

@@ -30,12 +30,12 @@ These images had varied resolutions, perspectives, and densities of vehicles in 
 
 ### Step 1: Dataloading
 
-```
+```python
 class BFSDataset(Dataset):
 def 
 ```
 
-```
+```python
     self.image_paths = []
     self.annotation_paths = []
 
@@ -77,12 +77,12 @@ Dataset processing was relatively simple--the data was organized in a structured
 
 ### Step 2: Semantic Segmentation Model
 
-```
+```python
 class SegmentationModel(nn.Module):
 def 
 ```
 
-```
+```python
     # Encoder for feature extraction
     self.encoder = nn.Sequential(
         nn.Conv2d(3, 32, kernel_size=3, padding=1),
@@ -120,11 +120,11 @@ The model, based on PyTorch/TorchVision, used a variety of feature extraction mo
 
 ### Part 3: Training and Validation
 
-```
+```python
 if 
 ```
 
-```
+```python
 annotation_transform = transforms.Compose([
     transforms.Resize((256, 256), interpolation=transforms.InterpolationMode.NEAREST),  # Resize annotations with nearest neighbor
     transforms.ToTensor()

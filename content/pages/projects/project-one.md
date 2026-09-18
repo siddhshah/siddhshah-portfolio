@@ -60,7 +60,7 @@ Two measures of goodness were used. The first one is minimization of cross-entro
 
 ![](/images/Screenshot%202025-06-03%20223615.png)
 
-```
+```python
 def loss(params, imageVector, correctLabel):
     a = net(params, imageVector)
     sum = 0
@@ -79,7 +79,7 @@ The second evaluation of performance is the fraction of labels correct for each 
 
 The training loop was non-complex, where I simply chose a random image in the training set, computed the gradient (through JAX's `grad(loss)` function), and observed how the fraction of correct labels changed for 100,000 steps.
 
-```
+```python
 loss_grad = jit(jax.grad(loss))
 fraction_list = []
 
