@@ -26,7 +26,9 @@ const Page: React.FC<PageComponentProps> = (props) => {
                     return <meta key={metaTag.property} name={metaTag.property} content={metaTag.content} />;
                 })}
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                {site.favicon && <link rel="icon" href={site.favicon} />}
+                <link rel="icon" href="/images/favicon-32.png" type="image/png" sizes="32x32" />
+                {site.favicon && <link rel="icon" href={site.favicon} type="image/svg+xml" />}
+                <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
             </Head>
             <DynamicComponent {...props} />
         </>

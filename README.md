@@ -1,53 +1,76 @@
-# Netlify Developer Portfolio Starter (auto-annotated)
+# siddhshah-portfolio
 
-![Developer Portfolio](https://assets.stackbit.com/docs/personal-nextjs-starter-thumb.png)
+Source for my personal portfolio: [siddhshah.netlify.app](https://siddhshah.netlify.app)
 
-This is a full-fledged portfolio website built with Next.js, Tailwind CSS, [visual editor](https://docs.netlify.com/visual-editor/overview/) and the [Git Content Source](https://docs.netlify.com/create/content-sources/git/).
+I'm a Computer Engineering student at UIUC working on GPU kernels, processor architecture, and embedded systems. The site collects the projects I've written up in depth, each with the code, the measurements, and what didn't work.
 
-The codebase showcases **how to apply annotations at scale**, meaning: how to make much of your components [highlightable in the visual editor](https://docs.netlify.com/visual-editor/visual-editing/inline-editor/) through data attributes without manually adding code throughout the codebase.
+## Projects on the site
 
-**This is achieved by:**
+- [GPU-Accelerated CNN Inference](https://siddhshah.netlify.app/projects/project-five): fused CUDA convolution kernel using WMMA Tensor Cores
+- [Out-of-Order RISC-V CPU](https://siddhshah.netlify.app/projects/project-six): RV32IM core with register renaming, gshare prediction, and a set-associative cache
+- [MatShrink for Attention](https://siddhshah.netlify.app/projects/project-seven): lossless weight compression for transformer attention
+- [STM32-Embedded Gesture Classifier](https://siddhshah.netlify.app/projects/project-four): TinyML gesture recognition from an accelerometer
+- [FPGA-Based Ultrasonic Radar](https://siddhshah.netlify.app/projects/project-two): real-time object mapping in SystemVerilog
+- [Galaxy Classification](https://siddhshah.netlify.app/projects/project-one): JAX neural network on SDSS images
+- [Semantic Segmentation](https://siddhshah.netlify.app/projects/project-three): CNN vehicle segmentation on traffic-camera images
 
-1. Adding an annotation property to the content objects at they're loaded (see `src/utils/content.ts`)
-1. When rendering the page, each content sub-object is dynamically matched to the appropriate component. At this point, wrap each component with an annotation, based on the abovementioned content property. See `src/components/components-registry.tsx`.
+## Stack
 
-**⚡ Demo:** [auto-annotated-portfolio.netlify.app](https://auto-annotated-portfolio.netlify.app)
+- [Next.js](https://nextjs.org) (Pages Router) and React, statically generated
+- [Tailwind CSS](https://tailwindcss.com) v4 with the typography plugin
+- Content as Markdown and JSON files in `content/`, rendered with `markdown-to-jsx`
+- Code blocks highlighted with Prism through `react-syntax-highlighter`
+- Hosted on [Netlify](https://www.netlify.com), with the contact form handled by Netlify Forms
 
-## Deploying to Netlify
+## Run it locally
 
-If you click "Deploy to Netlify" button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
+Use Node 22, which is what Netlify builds with.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/auto-annotated-portfolio)
-
-## Getting Started
-
-The typical development process is to begin by working locally. Clone this repository, then run `npm install` in its root directory.
-
-Run the Next.js development server:
-
-```txt
-cd auto-annotated-portfolio
-npm run dev
+```sh
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build, the same command Netlify runs
 ```
 
-Install the [Netlify visual editor CLI](https://www.npmjs.com/package/@stackbit/cli). Then open a new terminal window in the same project directory and run the Netlify visual editor dev server:
+## Where things live
 
-```txt
-npm install -g @stackbit/cli
-stackbit dev
+```
+content/
+  pages/            one Markdown file per page (home, info, projects/*)
+  data/config.json  header, footer, and navigation
+  data/style.json   theme colors and fonts
+public/
+  images/           every image used by the pages
+  __forms.html      static copy of the contact form (see below)
+src/
+  components/       layouts, sections, and form components
+  css/main.css      Tailwind setup plus code block, table, and figure styles
+  utils/            content loading, Markdown overrides, SEO helpers
 ```
 
-This outputs your own Netlify visual editor URL. Open this, register or sign in, and you will be directed to Netlify's visual editor for your new project.
+## Adding a project
 
-![Next.js Dev + Netlify visual editor dev](https://assets.stackbit.com/docs/next-dev-stackbit-dev.png)
+1. Create `content/pages/projects/<slug>.md`. The front matter needs `type: ProjectLayout`, `title`, `date`, and `description`. Add `featuredImage` (the card thumbnail) and `media` (the header image) if you have them.
+2. Write the page in Markdown. Fenced code blocks get a language label and syntax highlighting when tagged with `c`, `cpp`, `cuda`, `python`, `systemverilog`, `verilog`, `javascript`, or `css`.
+3. Put images in `public/images/` and reference them as `![alt text](/images/name.png "Caption shown under the figure")`. Keep parentheses out of captions, because the Markdown parser ends the caption at the first `)`.
+4. The projects page lists every project newest-first by `date`. To feature one on the home page, add its path to the `projects:` list in `content/pages/index.md`.
 
-## Next Steps
+## Contact form
 
-Here are a few suggestions on what to do next if you're new to Netlify Visual Editor:
+The form posts to Netlify Forms. Because this is a Next.js site, Netlify can only detect a form from a static HTML file, so `public/__forms.html` holds a hidden copy of it.
 
-- Learn [how Netlify Visual Editor works](https://docs.netlify.com/visual-editor/overview/)
-- Check [Netlify visual editor reference documentation](https://visual-editor-reference.netlify.com/)
+- If you add, rename, or remove a field in the form (in `content/pages/*.md`), make the same change in `public/__forms.html`. Netlify only recognizes fields it saw at deploy time.
+- Where the email goes is configured in the Netlify dashboard under Forms, then Submission notifications. It can't be set from this repo.
+- Every submission is also stored under Forms in the dashboard.
 
-## Support
+## Deploying
 
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+Pushing to `main` triggers a Netlify build (`npm run build`, published from `.next` through `@netlify/plugin-nextjs`).
+
+## Visual editor
+
+For quick content edits I sometimes use Netlify's visual editor, configured in `stackbit.config.ts` and `.stackbit/`. Publishing from it commits to this repo (the commits titled "Publish"), so pull before working locally. The site builds and runs without the editor.
+
+## Credits
+
+Started from Netlify's [Developer Portfolio Starter](https://github.com/netlify-templates/auto-annotated-portfolio).
