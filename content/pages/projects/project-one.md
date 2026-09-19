@@ -2,7 +2,7 @@
 type: ProjectLayout
 title: Galaxy Classification
 colors: colors-a
-date: '2021-10-15'
+date: '2025-06-02'
 client: ''
 description: >-
   JAX-based deep net to distinguish galaxy types based on images from the Sloan

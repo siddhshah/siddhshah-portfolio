@@ -8,6 +8,7 @@ import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-
 // Netlify only detects forms in static files, so submissions are POSTed to a static copy of the form.
 const FORMS_ENDPOINT = '/__forms.html';
 const FALLBACK_EMAIL = 'siddh.shah90@gmail.com';
+const NOTIFICATION_SUBJECT = 'New message from your portfolio site';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
@@ -46,6 +47,7 @@ export default function FormBlock(props) {
             <form className={className} name={elementId} id={elementId} onSubmit={handleSubmit}>
                 <div className="grid gap-6 sm:grid-cols-2">
                     <input type="hidden" name="form-name" value={elementId} />
+                    <input type="hidden" name="subject" value={NOTIFICATION_SUBJECT} />
                     <div hidden aria-hidden="true">
                         <label>
                             Leave this field empty
